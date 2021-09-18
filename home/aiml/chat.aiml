@@ -1,0 +1,66 @@
+<aiml version="1.0.1" encoding="UTF-8">
+    <!-- basic_chat.aiml -->
+
+    <category>
+        <pattern>*</pattern>
+        <template>
+            <random>
+                <li>Não entendi, me fale de outra forma</li>
+                <li>Não tenho resposta pra isso</li>
+            </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern>OI</pattern>
+        <template>
+            Olá, eu sou o chatbot e irei te ajudar e encontrar os vídeos que precisa. Me diga o tempo de vídeo que deseja?
+        </template>
+    </category>
+
+    <category>
+        <pattern>MEU NOME É *</pattern>
+        <template>
+            Prazer
+            <star />
+            , eu sou o Sr. Bot!
+        </template>
+    </category>
+
+    <category>
+        <pattern>ME DIGA O QUE VOCE FAZ</pattern>
+        <template>
+            Eu converso com você
+        </template>
+    </category>
+
+    <category>
+        <pattern>TCHAU</pattern>
+        <template>
+            Tchau, volte sempre!
+        </template>
+    </category>
+
+    <category>
+        <pattern>TEMPO</pattern>
+        <template>
+        OK, agora me diga a data de postagem dos vídeos que deseja encontrar?
+        </template>
+    </category>
+
+    <category>
+        <pattern>DATA</pattern>
+        <template>
+        OK, aqui está uma seleção de vídeos para você"!
+        </template>
+    </category>
+
+    <category>
+        <pattern>PESQUISAR POR *</pattern>
+        <template>
+            <star />
+            .youtube
+        </template>
+    </category>
+
+</aiml>

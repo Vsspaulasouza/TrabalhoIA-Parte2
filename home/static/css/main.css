@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 65%;
+  line-height: 65%;
+  background-color: #e5e5e5;
+}
+
+.chatbot {
+  background-color: #fff;
+  max-width: 375px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatbot .topo {
+  background-color: #fcfcfc;
+  max-width: 100%;
+  display: grid;
+  grid-column: 1fr 1fr 1fr;
+  grid-row: 1fr;
+  padding: 43px 16px 14px 16px;
+  align-items: center;
+}
+
+.chatbot .topo .perfil {
+  grid-column: 3/4;
+  justify-self: center;
+  width: 40px;
+  height: 40px;
+}
+
+.chatbot .topo .nome {
+  grid-column: 2/3;
+  justify-self: center;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  color: #000;
+}
+
+.chatbot .principal {
+  width: 100%;
+  height: 470px;
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.7) 0%,
+      rgba(255, 255, 255, 0.7) 100%
+    ),
+    url("../img/fundo.png") repeat-y 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.chatbot .principal::-webkit-scrollbar {
+  width: 5px;
+  height: 2px;
+}
+.chatbot .principal::-webkit-scrollbar-thumb {
+  background: rgb(30, 190, 113, 0.1);
+  border-radius: 10px;
+}
+.chatbot .principal::-webkit-scrollbar-thumb:hover {
+  background: rgb(30, 190, 113, 0.3);
+}
+.chatbot .principal::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: inset 7px 10px 12px 0px #f0f0f0;
+}
+
+.chatbot .principal .msg {
+  max-width: 263px;
+  padding: 11px 12px 12px 13px;
+  margin: 10px 16px;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.chatbot .principal .msgBot {
+  background-color: rgba(224, 224, 224, 1);
+  border-radius: 10px 10px 10px 0;
+  align-self: flex-start;
+  animation: deslizaEsquerda 500ms ease-in-out;
+}
+
+.chatbot .principal .esperando {
+  display: flex;
+}
+
+.chatbot .principal .esperando .ponto {
+  width: 7px;
+  height: 7px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  margin: 0 1px;
+  animation: pular 1.3s linear infinite;
+}
+
+.chatbot .principal .esperando .ponto2 {
+  animation-delay: -1.1s;
+}
+
+.chatbot .principal .esperando .ponto3 {
+  animation-delay: -0.9s;
+}
+
+.chatbot .principal .msgUser {
+  background-color: #1ebe71;
+  border-radius: 10px 10px 0 10px;
+  align-self: flex-end;
+  color: #fff;
+  animation: deslizaDireita 500ms ease-in-out;
+}
+
+.chatbot .rodape {
+  background-color: #fcfcfc;
+  max-width: 100%;
+  display: grid;
+  grid-column: 1fr 1fr 1fr;
+  grid-row: 1fr;
+  padding: 15px 23px 42px 10px;
+  align-items: center;
+  grid-gap: 10px;
+}
+
+.chatbot .rodape #entrada {
+  grid-column: 1/3;
+  justify-self: center;
+  width: 278px;
+  height: 33px;
+  background-color: #f2f2f2;
+  border-radius: 40px;
+  outline: none;
+  font-size: 1.4rem;
+  line-height: 33px;
+  overflow: hidden;
+  border: none;
+  color: rgba(0, 0, 0, 0.8);
+  padding: 6px 13px;
+  box-shadow: 1px 1px 10px -2px rgba(0, 0, 0, 0.5);
+}
+
+.chatbot .rodape #entrada:hover {
+  animation: pequeno2 400ms forwards;
+}
+
+.chatbot .rodape #entrada.nada {
+  box-shadow: 1px 1px 10px -2px rgb(252, 106, 106);
+}
+
+.chatbot .rodape #enviar {
+  grid-column: 3/4;
+  justify-self: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 40px;
+  border: none;
+  background-color: rgba(30, 190, 113, 0.8);
+  box-shadow: 1px 1px 10px -2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.chatbot .rodape #enviar:hover {
+  background-color: rgba(30, 190, 113, 1);
+  animation: pequeno 400ms forwards;
+}
+
+.chatbot .rodape #enviar i {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+@keyframes pequeno {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes pequeno2 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.98);
+  }
+}
+
+@keyframes deslizaDireita {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-15px);
+    opacity: 1;
+  }
+}
+
+@keyframes deslizaEsquerda {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(15px);
+    opacity: 1;
+  }
+}
+
+@keyframes pular {
+  0%,
+  60%,
+  100% {
+    transform: initial;
+  }
+
+  30% {
+    transform: translateY(-5px);
+  }
+}

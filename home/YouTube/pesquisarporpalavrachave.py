@@ -2,8 +2,7 @@ import requests
 import json
 
 
-def pesquisar(palavraChave):
-    order = "relevance"
+def pesquisar(palavraChave, order):
     apiKey = "AIzaSyCUVcai7yzkeQrN-yeabuKga1nd4-5Cvpg"
 
     url = f"https://youtube.googleapis.com/youtube/v3/search?part=id&maxResults=1&order={order}&q={palavraChave}&key={apiKey}"

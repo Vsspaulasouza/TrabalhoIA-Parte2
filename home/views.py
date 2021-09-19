@@ -1,3 +1,4 @@
+import re
 from django.http.response import HttpResponseBase, HttpResponseGone, HttpResponseNotModified, JsonResponse
 from django.shortcuts import render
 from django.http import HttpResponse, request
@@ -16,5 +17,10 @@ def enviaMsg(request):
         resposta = bot.geraResposta(mensagem)
         if resposta.endswith(".youtube"):
             resposta = resposta.replace(".youtube", "")
-            resposta = pesquisar(resposta)
+            order = resposta.partition(".")[2]
+            order = order.replace(" ", "")
+            order = order.replace(".", "")
+            resposta = resposta.replace(f".{order}", "")
+            resposta = resposta.replace(" ", "%20")
+            resposta = pesquisar(resposta, order)
     return JsonResponse({'resposta': resposta})

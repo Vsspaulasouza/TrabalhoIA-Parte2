@@ -1,6 +1,8 @@
 <aiml version="1.0.1" encoding="UTF-8">
     <!-- basic_chat.aiml -->
 
+
+    <!-- RESPOSTA PADRÃO -->
     <category>
         <pattern>*</pattern>
         <template>
@@ -10,56 +12,372 @@
             </random>
         </template>
     </category>
+    <category>
+        <pattern>*</pattern>
+        <that>
+            * FALE DE OUTRA FORMA
+        </that>
+        <template>
+            <srai>COMECAR DENOVO</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>*</pattern>
+        <that>
+            * RESPOSTA PRA ISSO
+        </that>
+        <template>
+            <srai>COMECAR DENOVO</srai>
+        </template>
+    </category>
 
+    <!-- SAUDAÇÃO -->
     <category>
         <pattern>OI</pattern>
         <template>
-            Olá, eu sou o chatbot e irei te ajudar e encontrar os vídeos que precisa. Me diga o tempo de vídeo que deseja?
+            Eu sou o Sr Bot e estou aqui para pesquisar vídeos por você. Por favor, me fale o assunto que deseja pesquisar
+        </template>
+    </category>
+    <category>
+        <pattern>OI *</pattern>
+        <template>
+            <srai>OI</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>OLÁ</pattern>
+        <template>
+            <srai>OI</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>OLÁ *</pattern>
+        <template>
+            <srai>OI</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>OLA</pattern>
+        <template>
+            <srai>OI</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>OLA *</pattern>
+        <template>
+            <srai>OI</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>COMECAR DENOVO</pattern>
+        <template>
+            Vamos começar denovo. Por favor, me fale o assunto que deseja pesquisar
+        </template>
+    </category>
+    <category>
+        <pattern>OBRIGADO</pattern>
+        <template>
+            Disponha!
+        </template>
+    </category>
+
+    <!-- TEMAS -->
+    <category>
+        <pattern>*</pattern>
+        <that>
+            * DESEJA PESQUISAR
+        </that>
+        <template>
+            Ok. Vou pesquisar sobre
+            <set name="tema">
+                <star />
+            </set>
+            . Você quer a pesquisa com base na data, classificação ou relevância?
         </template>
     </category>
 
     <category>
-        <pattern>MEU NOME É *</pattern>
+        <pattern>POO</pattern>
+        <that>* DESEJA PESQUISAR</that>
         <template>
-            Prazer
-            <star />
-            , eu sou o Sr. Bot!
+            POO é um bom tema. Mas é muito amplo, você não quer pesquisar de uma forma mais específica?
         </template>
     </category>
 
     <category>
-        <pattern>ME DIGA O QUE VOCE FAZ</pattern>
+        <pattern>NÃO</pattern>
+        <that>
+            POO * 
+        </that>
         <template>
-            Eu converso com você
+            Ok. Vou pesquisar sobre
+            <set name="tema">POO</set>
+            então. Você quer a pesquisa com base na data, classificação ou relevância?
         </template>
     </category>
 
     <category>
-        <pattern>TCHAU</pattern>
+        <pattern>NAO</pattern>
         <template>
-            Tchau, volte sempre!
+            <srai>NÃO</srai>
+        </template>
+    </category>
+
+    <!-- POO -->
+    <category>
+        <pattern>PROGRAMAÇÃO ORIENTADA A OBJETOS</pattern>
+        <template>
+            <srai>POO</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>PROGRAMACAO ORIENTADA A OBJETOS</pattern>
+        <template>
+            <srai>POO</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>PROGRAMAÇÃO ORIENTADA A OBJETOS *</pattern>
+        <template>
+            <srai>POO</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>PROGRAMACAO ORIENTADA A OBJETOS *</pattern>
+        <template>
+            <srai>POO</srai>
+        </template>
+    </category>
+
+
+    <!-- POO SUBTEMAS -->
+    <category>
+        <pattern>SIM</pattern>
+        <that>
+            POO * 
+        </that>
+        <template>
+            Ok. Posso sugerir alguns subtema pra você?
         </template>
     </category>
 
     <category>
-        <pattern>TEMPO</pattern>
+        <pattern>NÃO</pattern>
+        <that>
+            OK POSSO SUGERIR *
+        </that>
         <template>
-        OK, agora me diga a data de postagem dos vídeos que deseja encontrar?
+            Tudo bem. Me diga um subtema da sua escolha então
+        </template>
+    </category>
+
+    <category>
+        <pattern>NAO</pattern>
+        <template>
+            <srai>NÃO</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SIM</pattern>
+        <that>
+            OK POSSO SUGERIR *
+        </that>
+        <template>
+            <srai>OUTRO</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>OUTRO</pattern>
+        <template>
+            <random>
+                <li>Classes em POO. Gosta deste?</li>
+                <li>Classes abstratas em POO. Gosta deste?</li>
+                <li>Interfaces em POO. Gosta deste?</li>
+                <li>Atributos em POO. Gosta deste?</li>
+                <li>Métodos em POO. Gosta deste?</li>
+                <li>Atributos static em POO. Gosta deste?</li>
+                <li>Métodos static em POO. Gosta deste?</li>
+                <li>Classes static em POO. Gosta deste?</li>
+                <li>Modificadores de acesso em POO. Gosta deste?</li>
+                <li>Classes abstratas em POO. Gosta deste?</li>
+                <li>Métodos abstratos em POO. Gosta deste?</li>
+                <li>Herança em POO. Gosta deste?</li>
+                <li>Polimorfismo em POO. Gosta deste?</li>
+            </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* OUTRO</pattern>
+        <template>
+            <srai>OUTRO</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>OUTRO *</pattern>
+        <template>
+            <srai>OUTRO</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* OUTRO *</pattern>
+        <template>
+            <srai>OUTRO</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SIM</pattern>
+        <that>
+            * GOSTA DESTE
+        </that>
+        <template>
+            Ok. Vou pesquisar sobre
+            <set name="tema">
+                <thatstar />
+            </set>
+            Você quer a pesquisa com base na data, classificação ou relevância?
+        </template>
+    </category>
+
+    <category>
+        <pattern>NAO</pattern>
+        <that>
+            * GOSTA DESTE
+        </that>
+        <template>
+            Tudo bem. Me diga um subtema da sua escolha então
+        </template>
+    </category>
+
+    <category>
+        <pattern>NÃO</pattern>
+        <that>
+            * GOSTA DESTE
+        </that>
+        <template>
+            <srai>NAO</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>*</pattern>
+        <that>
+            TUDO BEM ME DIGA UM SUBTEMA *
+        </that>
+        <template>
+            Ok. Vou pesquisar sobre
+            <set name="tema">
+                <star />
+            </set>
+            . Você quer a pesquisa com base na data, classificação ou relevância?
+        </template>
+    </category>
+
+
+    <!-- PESQUISA -->
+    <category>
+        <pattern>*</pattern>
+        <that>
+            OK VOU PESQUISAR SOBRE *
+        </that>
+        <template>
+            Não entendi. Escreva data, classificação ou relevância. Por favor!
         </template>
     </category>
 
     <category>
         <pattern>DATA</pattern>
+        <that>
+            OK VOU PESQUISAR SOBRE *
+        </that>
         <template>
-        OK, aqui está uma seleção de vídeos para você"!
+            <get name="tema" />
+            .date.youtube
         </template>
     </category>
 
     <category>
-        <pattern>PESQUISAR POR *</pattern>
+        <pattern>CLASSIFICACAO</pattern>
+        <that>
+            OK VOU PESQUISAR SOBRE *
+        </that>
         <template>
-            <star />
-            .youtube
+            <get name="tema" />
+            .rating.youtube
+        </template>
+    </category>
+    <category>
+        <pattern>CLASSIFICAÇAO</pattern>
+        <that>
+            OK VOU PESQUISAR SOBRE *
+        </that>
+        <template>
+            <srai>CLASSIFICACAO</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>CLASSIFICAÇÃO</pattern>
+        <that>
+            OK VOU PESQUISAR SOBRE *
+        </that>
+        <template>
+            <srai>CLASSIFICACAO</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>RELEVANCIA</pattern>
+        <that>
+            OK VOU PESQUISAR SOBRE *
+        </that>
+        <template>
+            <get name="tema" />
+            .relevance.youtube
+        </template>
+    </category>
+    <category>
+        <pattern>RELEVÂNCIA</pattern>
+        <that>
+            OK VOU PESQUISAR SOBRE *
+        </that>
+        <template>
+            <srai>RELEVANCIA</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>DATA</pattern>
+        <that>
+            * ESCREVA DATA *
+        </that>
+        <template>
+            <get name="tema" />
+            .date.youtube
+        </template>
+    </category>
+    <category>
+        <pattern>CLASSIFICAÇÃO</pattern>
+        <that>
+            * ESCREVA DATA *
+        </that>
+        <template>
+            <get name="tema" />
+            .rating.youtube
+        </template>
+    </category>
+    <category>
+        <pattern>RELEVÂNCIA</pattern>
+        <that>
+            * ESCREVA DATA *
+        </that>
+        <template>
+            <get name="tema" />
+            .relevance.youtube
         </template>
     </category>
 

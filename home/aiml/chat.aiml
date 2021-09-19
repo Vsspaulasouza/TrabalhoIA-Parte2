@@ -111,7 +111,7 @@
         </that>
         <template>
             Ok. Vou pesquisar sobre
-            <set name="tema">POO</set>
+            <set name="tema">Programação orientada a objetos</set>
             então. Você quer a pesquisa com base na data, classificação ou relevância?
         </template>
     </category>

@@ -3,7 +3,7 @@ import json
 
 
 def pesquisar(palavraChave, order):
-    apiKey = "AIzaSyCUVcai7yzkeQrN-yeabuKga1nd4-5Cvpg"
+    apiKey = "AIzaSyAPw8PT90yNQLc1JWVNneupqmCpeV7NQxA"
 
     url = f"https://youtube.googleapis.com/youtube/v3/search?part=id&maxResults=1&order={order}&publishedAfter=2010-01-01T00%3A00%3A00Z&q={palavraChave}&regionCode=BR&relevanceLanguage=pt-BR&type=video&videoEmbeddable=true&key={apiKey}"
 

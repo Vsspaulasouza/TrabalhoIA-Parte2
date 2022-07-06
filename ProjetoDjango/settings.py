@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # ADICIONAR A NOVA APLICAÇÃO
     'home',
+    'sslserver'
 ]
 
 MIDDLEWARE = [

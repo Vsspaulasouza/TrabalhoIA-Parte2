@@ -1,2 +1,8 @@
 @import url(reset.css);
 @import url(main.css);
+
+a, p{
+    font-size: 25px;
+    align-self: auto;
+    color: #313e57;
+}

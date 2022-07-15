@@ -19,9 +19,13 @@ from django.urls.conf import include
 from django.urls import re_path as url
 from home import views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # QUANDO NÃO DIGITAR NADA VAI PARA A PAGINA HOMES
-    path('', include("home.urls", namespace='home')),
+    path('', include("home.urls")),
+    
+
     url('enviaMsg', views.enviaMsg, name='enviaMsg'),
+
 ]

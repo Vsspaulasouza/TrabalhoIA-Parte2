@@ -9,7 +9,23 @@
     <title>ChatBot</title>
     <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}"/>
 
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href= 'static/css/index.css'>
+
+    {% csrf_token %}
+    {% block content %}
+
+    {% if user.is_authenticated %}
+        <br>
+        <p> Seja bem vindo {{ user.username }}! </p>
+        <br>
+        <p><a href="{% url 'home:logout' %}">Sair</a></p>
+    {% else %}
+        <p>You are not logged in</p>
+        <a href="{% url 'home:login' %}">login</a>
+    {% endif %}
+
+    {% endblock %}
+  
 </head>
 
 <body>

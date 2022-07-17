@@ -12,6 +12,7 @@ html {
   max-width: 375px;
   display: flex;
   flex-direction: column;
+  place-items: center;
 }
 
 .chatbot .topo {

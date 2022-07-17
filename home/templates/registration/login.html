@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href= '../static/css/reset.css' />
+    <link rel="stylesheet" href= '../static/css/login.css' />
+</head>
+<body>
+    <section class="login">      
+        <form action= "{% url 'home:login' %}"class="login__form" method="POST"> {% csrf_token %}     
+           
+            
+               <div class="login__label">
+                <font size="4">Faça seu Login!</font>
+                <br>
+                <br>
+                
+                {{ form.as_p }}
+                
+                <br>
+                <button class="login__button" type="submit">Login</button>
+                <br>
+                <br>
+                <a href="/cadastro" class="login__label">Cadastrar</a>            
+                </div>
+            
+            {% if messages %}
+            {% for m in messages %}
+                
+                <div class="login__label" role="alert">
+                  {{ m }}
+                </div>
+                
+            {% endfor %}
+            {% endif %}
+            
+    </section>
+   
+</body>
+</html>
